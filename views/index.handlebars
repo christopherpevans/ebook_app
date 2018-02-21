@@ -8,16 +8,21 @@
   <script
     src="https://checkout.stripe.com/checkout.js" class="stripe-button"
     data-key="pk_test_vBVa8tmPvEeiCtS0RK67SIps"
-    data-amount="2500"
-    data-name="Web Development Book"
-    data-description="Ebook written by Princeton Evans"
+    data-amount="999"
+    data-name="No Bedtime No Way"
+    data-description="Ebook written by Paris Evans"
     data-image="/img/marketplace.png"
     data-locale="auto">
   </script>
+  <script>
+    // Hide default stripe button
+    document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
+  </script>
+  <button type="submit" class="btn btn-outline-dark text-white btn-lg">Purchase for $9.99</button>
 </form>
     </div>
     <div class="col-md-6">
-      <img src="/img/book.png" alt="" class="img-fluid">
+      <img src="/img/bedtime.jpg" alt="" class="img-fluid">
     </div>
   </div>
 </section>
