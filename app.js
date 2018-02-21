@@ -1,5 +1,5 @@
 const express = require('express');
-const keys = require('./config/keys')
+const keys = require('./config/keys');
 const stripe = require('stripe')(keys.stripeSecretKey);
 const bodyParser = require('body-parser');
 const exphbs = require('express-handlebars');
@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 
 // Charge Route
 app.post('/charge', (req, res) => {
-  const amount = 999;
+  const amount = 2500;
 
   stripe.customers.create({
     email: req.body.stripeEmail,
@@ -33,14 +33,14 @@ app.post('/charge', (req, res) => {
   })
   .then(customer => stripe.charges.create({
     amount,
-    description:'Web Development Ebook',
-    currency:'usd',
-    customer:customer.id
+    description: 'Web Development Ebook',
+    currency: 'usd',
+    customer: customer.id
   }))
-  .then(charge => res.render('Success'));
+  .then(charge => res.render('success'));
 });
 
-const port = process.env.Port || 5000;
+const port = process.env.PORT || 5000;
 
 app.listen(port, () => {
   console.log(`Server started on port ${port}`);
