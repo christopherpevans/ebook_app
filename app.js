@@ -5,6 +5,17 @@ const exphbs = require('express-handlebars');
 
 const app = express();
 
+app.engine('handlebars', exphbs({defaultLayout: 'main'}));
+app.set('view engine', 'handlebars');
+
+// Body Parser Middleware
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({extended:false}));
+//Index Route
+app.get('/', (req, res) => {
+  res.render('index');
+});
+
 const port = process.env.Port || 5000;
 
 app.listen(port, () => {
