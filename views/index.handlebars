@@ -5,24 +5,35 @@
         Ebooks for Children
       </h1><p class="lead">Reading levels PK-5th Grade</p>
       <form action="/charge" method="POST">
-  <script
-    src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-    data-key="{{stripePublishableKey}}"
-    data-amount="999"
-    data-name="No Bedtime No Way"
-    data-description="Ebook written by Paris Evans"
-    data-image="/img/panda.png"
-    data-locale="auto">
-  </script>
-  <script>
-    // Hide default stripe button
-    document.getElementsByClassName('stripe-button-el')[0].style.display = 'none';
-  </script>
-  <button type="submit" class="btn btn-outline-dark text-white btn-lg">Purchase for $9.99</button>
-</form>
+        <script
+          src="https://checkout.stripe.com/checkout.js"
+          class="stripe-button"
+          data-key="{{stripePublishableKey}}"
+          data-amount="999"
+          data-name="No Bedtime No Way"
+          data-description="Ebook written by Paris Evans"
+          data-image="/img/panda.png"
+          data-locale="auto"
+        >
+        </script>
+        <script>
+          // Hide default stripe button
+          document.getElementsByClassName('stripe-button-el')[0].style.display =
+          'none';
+        </script>
+        <button
+          type="submit"
+          class="btn btn-outline-dark text-white btn-lg"
+        >Purchase for $9.99</button>
+        <a
+          class="btn btn-primary"
+          href="https://www.amazon.com/No-Bed-Time-Way/dp/B0B4FY8KX6"
+          role="button"
+        >Check out on Amazon</a>
+      </form>
     </div>
     <div class="col-md-6">
-      <img src="/img/bedtime1.jpg" alt="" class="img-fluid">
+      <img src="/img/bedtime1.jpg" alt="" class="img-fluid" />
     </div>
   </div>
 </section>
